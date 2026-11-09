@@ -1,6 +1,6 @@
 ! Title: Allowlist cá nhân cho AdGuard Home (Việt Nam)
 ! Description: Ngoại lệ cho các dịch vụ thiết yếu ở Việt Nam. Chỉ mở tên miền chính chủ, KHÔNG mở CDN/hạ tầng dùng chung.
-! Homepage: https://github.com/<ten-github-cua-ban>/adguardhome
+! Homepage: https://github.com/VinhPV99/adguardhome
 ! Last modified: 2026-11-09
 !
 ! Quy tắc viết:
