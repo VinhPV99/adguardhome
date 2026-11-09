@@ -1,0 +1,132 @@
+! Title: Allowlist cá nhân cho AdGuard Home (Việt Nam)
+! Description: Ngoại lệ cho các dịch vụ thiết yếu ở Việt Nam. Chỉ mở tên miền chính chủ, KHÔNG mở CDN/hạ tầng dùng chung.
+! Homepage: https://github.com/<ten-github-cua-ban>/adguardhome
+! Last modified: 2026-11-09
+!
+! Quy tắc viết:
+!   @@||ten-mien^   = cho phép tên miền đó VÀ mọi tên miền con
+!   Dòng bắt đầu bằng ! là ghi chú, AdGuard bỏ qua
+!   KHÔNG thêm tên miền CDN dùng chung (amazonaws.com, cloudfront.net, akamai*, fastly*,
+!   githubusercontent.com...) vì sẽ mở cửa cho quảng cáo, lừa đảo và mã độc chạy trên đó.
+!   Gặp chặn nhầm: tra Query Log, chỉ thêm ĐÚNG tên miền con bị chặn.
+
+! ---------- 1. Cơ quan nhà nước & dịch vụ công ----------
+! Toàn bộ tên miền .gov.vn (chỉ cơ quan nhà nước mới được cấp), bao gồm các bộ ngành,
+! UBND tỉnh/thành, toà án, thuế (gdt.gov.vn), dichvucong.gov.vn, vneid.gov.vn,
+! baohiemxahoi.gov.vn, bocongan.gov.vn, moet.gov.vn...
+@@||gov.vn^
+! Cổng thông tin chính thống không nằm dưới .gov.vn
+@@||chinhphu.vn^
+@@||baochinhphu.vn^
+@@||quochoi.vn^
+@@||dangcongsan.vn^
+@@||mattran.org.vn^
+@@||vnnic.vn^
+@@||csgt.vn^
+! Doanh nghiệp nhà nước cung cấp dịch vụ thiết yếu
+@@||vnpost.vn^
+@@||evn.com.vn^
+@@||evnhanoi.vn^
+@@||evnhcmc.vn^
+@@||evnspc.vn^
+@@||evncpc.vn^
+@@||evnnpc.vn^
+
+! ---------- 1b. Báo chí & truyền thông nhà nước ----------
+@@||nhandan.vn^
+@@||vtv.vn^
+@@||vov.vn^
+@@||vietnamplus.vn^
+@@||vnanet.vn^
+@@||qdnd.vn^
+@@||cand.com.vn^
+@@||hanoimoi.vn^
+@@||sggp.org.vn^
+
+! ---------- 1c. Giáo dục (TẮT sẵn) ----------
+! .edu.vn gồm hàng nghìn website trường học, một số từng bị hack để chèn quảng cáo cờ bạc.
+! Chỉ bật nếu trường của con bạn bị chặn nhầm, hoặc tốt hơn: thêm đúng tên miền trường đó.
+! @@||edu.vn^
+
+! ---------- 2. Ngân hàng ----------
+@@||vietcombank.com.vn^
+@@||vietinbank.vn^
+@@||bidv.com.vn^
+@@||agribank.com.vn^
+@@||techcombank.com^
+@@||techcombank.com.vn^
+@@||mbbank.com.vn^
+@@||acb.com.vn^
+@@||vpbank.com.vn^
+@@||tpb.vn^
+@@||vib.com.vn^
+@@||sacombank.com.vn^
+@@||hdbank.com.vn^
+@@||shb.com.vn^
+@@||ocb.com.vn^
+@@||msb.com.vn^
+@@||seabank.com.vn^
+@@||cake.vn^
+@@||timo.vn^
+@@||napas.com.vn^
+
+! ---------- 3. Ví điện tử & cổng thanh toán ----------
+@@||momo.vn^
+@@||zalopay.vn^
+@@||vnpay.vn^
+@@||viettelmoney.vn^
+@@||shopeepay.vn^
+@@||onepay.vn^
+@@||payoo.vn^
+@@||nganluong.vn^
+
+! ---------- 4. Mua sắm, giao hàng, gọi xe ----------
+@@||shopee.vn^
+@@||shp.ee^
+@@||shopeefood.vn^
+@@||lazada.vn^
+@@||tiki.vn^
+@@||tikicdn.com^
+@@||sendo.vn^
+@@||thegioididong.com^
+@@||dienmayxanh.com^
+@@||fptshop.com.vn^
+@@||cellphones.com.vn^
+@@||grab.com^
+@@||be.com.vn^
+@@||xanhsm.com^
+@@||ghn.vn^
+@@||ghtk.vn^
+@@||viettelpost.com.vn^
+@@||jtexpress.vn^
+
+! ---------- 5. Nhắn tin ----------
+@@||zalo.me^
+@@||zalo.vn^
+@@||zaloapp.com^
+@@||zadn.vn^
+
+! ---------- 6. Báo chí ----------
+@@||vnexpress.net^
+@@||dantri.com.vn^
+@@||tuoitre.vn^
+@@||thanhnien.vn^
+@@||vietnamnet.vn^
+@@||znews.vn^
+
+! ---------- 7. Nhà mạng & Internet ----------
+@@||viettel.vn^
+@@||vinaphone.com.vn^
+@@||vnpt.vn^
+@@||mobifone.vn^
+@@||fpt.vn^
+
+! ---------- 8. Sửa chặn nhầm cụ thể (TẮT sẵn) ----------
+! Bỏ dấu ! ở đầu dòng nếu gặp đúng lỗi được ghi chú.
+! Bấm kết quả "Được tài trợ" trên Google/Google Shopping không mở được:
+! @@||googleadservices.com^
+! Link khuyến mãi trong email/banner không mở được:
+! @@||ad.doubleclick.net^
+
+! ---------- 9. Ngoại lệ riêng của nhà bạn ----------
+! Thêm các tên miền tìm được trong Query Log vào dưới đây, mỗi dòng một tên miền.
